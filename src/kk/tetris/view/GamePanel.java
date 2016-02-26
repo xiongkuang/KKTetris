@@ -2,6 +2,7 @@ package kk.tetris.view;
 
 import kk.tetris.entities.Ground;
 import kk.tetris.entities.Shape;
+import kk.tetris.util.Global;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,9 +26,15 @@ public class GamePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.setColor(new Color(0xcfcfcf));
+        g.fillRect(0, 0, Global.WIDTH * Global.CELL_SIZE, Global.HEIGHT * Global.CELL_SIZE);
         if (shape != null && ground != null){
-            shape.drawMe();
+            shape.drawMe(g);
             ground.drawMe();
         }
+    }
+
+    public GamePanel(){
+        this.setSize(Global.WIDTH * Global.CELL_SIZE, Global.HEIGHT * Global.CELL_SIZE);
     }
 }

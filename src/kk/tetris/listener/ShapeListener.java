@@ -7,4 +7,6 @@ import kk.tetris.entities.Shape;
  */
 public interface ShapeListener {
     void shapeMoveDown(Shape shape);
+
+    boolean isShapeCanMoveDown(Shape shape);
 }
