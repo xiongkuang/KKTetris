@@ -90,8 +90,11 @@ public class Shape {
         }
     }
 
-    public Shape(){
-        new Thread(new ShapeDriver()).start();
+    public Shape(int body[][], int status){
+        this.body = body;
+        this.status = status;
+        Thread autoMoveDown=new Thread(new ShapeDriver());
+        autoMoveDown.start();
     }
 
     public void addShapeListener(ShapeListener listener){

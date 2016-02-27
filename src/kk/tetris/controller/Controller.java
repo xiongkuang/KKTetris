@@ -28,7 +28,7 @@ public class Controller extends KeyAdapter implements ShapeListener {
                 }
                 break;
             case KeyEvent.VK_DOWN:
-                if (ground.isMovable(shape, Shape.DOWN)) {
+                if (isShapeCanMoveDown(shape)) {
                     shape.moveDown();
                 }
                 break;
@@ -52,8 +52,21 @@ public class Controller extends KeyAdapter implements ShapeListener {
     }
 
     @Override
-    public boolean isShapeCanMoveDown(Shape shape){
-        return ground.isMovable(shape, Shape.DOWN);
+    public synchronized boolean  isShapeCanMoveDown(Shape shape){
+        if (this.shape != shape){
+            return false;
+        }
+        if (ground.isMovable(shape, Shape.DOWN)){
+            return true;
+        }else {
+            ground.accept(this.shape);
+            if (!ground.isFull()){
+                this.shape = shapeFactory.getShape(this);
+            }
+            System.out.println("Game Over");
+
+            return false;
+        }
     }
     public void newGame(){
         shape = shapeFactory.getShape(this);

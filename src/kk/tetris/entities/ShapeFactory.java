@@ -20,11 +20,12 @@ public class ShapeFactory {
 
     public Shape getShape(ShapeListener listener){
         System.out.println("ShapeFactory's get shape");
-        Shape shape = new Shape();
-        shape.addShapeListener(listener);
+
         int type = new Random().nextInt(shapes.length);//shapes.length types of shape can be generated
-        shape.setBody(shapes[type]);
-        shape.setStatus(0);
+        Shape shape = new Shape(shapes[type],0);
+        shape.addShapeListener(listener);
+//        shape.setBody(shapes[type]);
+//        shape.setStatus(0);
         return shape;
     }
 

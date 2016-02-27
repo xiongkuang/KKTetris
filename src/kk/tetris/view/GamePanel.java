@@ -30,7 +30,7 @@ public class GamePanel extends JPanel {
         g.fillRect(0, 0, Global.WIDTH * Global.CELL_SIZE, Global.HEIGHT * Global.CELL_SIZE);
         if (shape != null && ground != null){
             shape.drawMe(g);
-            ground.drawMe();
+            ground.drawMe(g);
         }
     }
 
