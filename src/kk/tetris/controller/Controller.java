@@ -18,6 +18,38 @@ public class Controller extends KeyAdapter implements ShapeListener {
     private Ground ground;
     private GamePanel gamePanel;
 
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
+
+    public ShapeFactory getShapeFactory() {
+        return shapeFactory;
+    }
+
+    public void setShapeFactory(ShapeFactory shapeFactory) {
+        this.shapeFactory = shapeFactory;
+    }
+
+    public Ground getGround() {
+        return ground;
+    }
+
+    public void setGround(Ground ground) {
+        this.ground = ground;
+    }
+
+    public GamePanel getGamePanel() {
+        return gamePanel;
+    }
+
+    public void setGamePanel(GamePanel gamePanel) {
+        this.gamePanel = gamePanel;
+    }
+
     @Override
     public void keyPressed(KeyEvent e) {
         super.keyPressed(e);

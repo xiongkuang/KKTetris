@@ -119,4 +119,28 @@ public class Shape {
     public int getLeft() {
         return left;
     }
+
+    public int[][] getBody() {
+        return body;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setLeft(int left) {
+        this.left = left;
+    }
+
+    public void setTop(int top) {
+        this.top = top;
+    }
+
+    public ShapeListener getListener() {
+        return listener;
+    }
+
+    public void setListener(ShapeListener listener) {
+        this.listener = listener;
+    }
 }

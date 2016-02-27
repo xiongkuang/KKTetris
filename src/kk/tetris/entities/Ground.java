@@ -95,4 +95,12 @@ public class Ground {
         }
         return false;
     }
+
+    public int[][] getObstacles() {
+        return obstacles;
+    }
+
+    public void setObstacles(int[][] obstacles) {
+        this.obstacles = obstacles;
+    }
 }

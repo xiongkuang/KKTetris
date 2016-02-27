@@ -29,5 +29,11 @@ public class ShapeFactory {
         return shape;
     }
 
+    public int[][][] getShapes() {
+        return shapes;
+    }
 
+    public void setShapes(int[][][] shapes) {
+        this.shapes = shapes;
+    }
 }

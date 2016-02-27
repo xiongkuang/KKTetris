@@ -37,4 +37,20 @@ public class GamePanel extends JPanel {
     public GamePanel(){
         this.setSize(Global.WIDTH * Global.CELL_SIZE, Global.HEIGHT * Global.CELL_SIZE);
     }
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
+
+    public Ground getGround() {
+        return ground;
+    }
+
+    public void setGround(Ground ground) {
+        this.ground = ground;
+    }
 }
